@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Насколько хорошо ты меня знаешь?</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+      color: #333;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    h1 {
+      text-align: center;
+      color: #e91e63;
+    }
+    .question {
+      display: none;
+      margin: 20px 0;
+    }
+    .question.active {
+      display: block;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .result {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Насколько хорошо ты меня знаешь?</h1>
+
+  <form id="quizForm">
+    <div class="question active" id="q1">
+      <h3>1. Какую музыку я слушаю?</h3>
+      <label><input type="radio" name="q1" value="correct"> Я меломан</label>
+      <label><input type="radio" name="q1" value="wrong"> Рок</label>
+      <label><input type="radio" name="q1" value="wrong"> Рэп</label>
+      <label><input type="radio" name="q1" value="wrong"> Классика</label>
+    </div>
+
+    <div class="question" id="q2">
+      <h3>2. Кем хочу стать?</h3>
+      <label><input type="radio" name="q2" value="wrong"> Полицейский</label>
+      <label><input type="radio" name="q2" value="correct"> Программистом</label>
+      <label><input type="radio" name="q2" value="wrong"> Актёром</label>
+      <label><input type="radio" name="q2" value="wrong"> Поваром</label>
+    </div>
+
+    <div class="question" id="q3">
+      <h3>3. Мой любимый персонаж в Valorant?</h3>
+      <label><input type="radio" name="q3" value="wrong"> Omen</label>
+      <label><input type="radio" name="q3" value="wrong"> Gekko</label>
+      <label><input type="radio" name="q3" value="correct"> Yoru</label>
+      <label><input type="radio" name="q3" value="wrong"> Kayo</label>
+    </div>
+
+    <div class="question" id="q4">
+      <h3>4. Мой любимый персонаж в Brawl Stars?</h3>
+      <label><input type="radio" name="q4" value="wrong"> Биби</label>
+      <label><input type="radio" name="q4" value="correct"> Спайк</label>
+      <label><input type="radio" name="q4" value="wrong"> Сенди</label>
+      <label><input type="radio" name="q4" value="wrong"> Шелли</label>
+    </div>
+
+    <div class="question" id="q5">
+      <h3>5. На каком языке программирования я пишу коды?</h3>
+      <label><input type="radio" name="q5" value="correct"> Python</label>
+      <label><input type="radio" name="q5" value="wrong"> Java</label>
+      <label><input type="radio" name="q5" value="wrong"> C++</label>
+      <label><input type="radio" name="q5" value="wrong"> JavaScript</label>
+    </div>
+
+    <div class="question" id="q6">
+      <h3>6. Сколько раз я ломал себе руки?</h3>
+      <label><input type="radio" name="q6" value="wrong"> 2</label>
+      <label><input type="radio" name="q6" value="wrong"> 0</label>
+      <label><input type="radio" name="q6" value="wrong"> 1</label>
+      <label><input type="radio" name="q6" value="correct"> 3</label>
+    </div>
+
+    <div class="question" id="q7">
+      <h3>7. Мой самый первый мейн в Валоранте?</h3>
+      <label><input type="radio" name="q7" value="wrong"> Jett</label>
+      <label><input type="radio" name="q7" value="wrong"> Yoru</label>
+      <label><input type="radio" name="q7" value="wrong"> Kayo</label>
+      <label><input type="radio" name="q7" value="correct"> Omen</label>
+    </div>
+
+    <div class="question" id="q8">
+      <h3>8. Мой любимый мультсериал?</h3>
+      <label><input type="radio" name="q8" value="correct"> Аватар:Легенда об Аанге</label>
+      <label><input type="radio" name="q8" value="wrong"> Губка боб</label>
+      <label><input type="radio" name="q8" value="wrong"> Гамбол</label>
+      <label><input type="radio" name="q8" value="wrong"> Время приключений</label>
+    </div>
+
+    <div class="question" id="q9">
+      <h3>9. Мой любимый скин в Валорант?</h3>
+      <label><input type="radio" name="q9" value="wrong"> Фурри</label>
+      <label><input type="radio" name="q9" value="correct"> Дракончик</label>
+      <label><input type="radio" name="q9" value="wrong"> Японская хуна</label>
+      <label><input type="radio" name="q9" value="wrong"> Жнец</label>
+    </div>
+
+    <div class="question" id="q10">
+      <h3>10. Моя любимая анимешка йоуу?</h3>
+      <label><input type="radio" name="q10" value="correct"> Клинок</label>
+      <label><input type="radio" name="q10" value="wrong"> Атака титанов</label>
+      <label><input type="radio" name="q10" value="wrong"> Наруто</label>
+      <label><input type="radio" name="q10" value="wrong"> Тетрадь смерти</label>
+    </div>
+
+    <div class="question" id="q11">
+      <h3>11. Скока у меня см?</h3>
+      <label><input type="radio" name="q11" value="wrong"> 12</label>
+      <label><input type="radio" name="q11" value="wrong"> 9</label>
+      <label><input type="radio" name="q11" value="correct"> 18</label>
+      <label><input type="radio" name="q11" value="wrong"> 13</label>
+    </div>
+
+    <div class="question" id="q12">
+      <h3>12. Сколько хочу себе татуировок?</h3>
+      <label><input type="radio" name="q12" value="correct"> 3</label>
+      <label><input type="radio" name="q12" value="wrong"> 1</label>
+      <label><input type="radio" name="q12" value="wrong"> 5</label>
+      <label><input type="radio" name="q12" value="wrong"> 0</label>
+    </div>
+
+    <button type="button" id="nextBtn">Далее</button>
+  </form>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    const questions = document.querySelectorAll('.question');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentQuestion = 0;
+
+    nextBtn.addEventListener('click', () => {
+      const current = questions[currentQuestion];
+      const checked = current.querySelector('input[type="radio"]:checked');
+      if (!checked) {
+        alert('Выбери ответ, пожалуйста!');
+        return;
+      }
+      current.classList.remove('active');
+      currentQuestion++;
+
+      if (currentQuestion < questions.length) {
+        questions[currentQuestion].classList.add('active');
+      } else {
+        showResult();
+      }
+    });
+
+    function showResult() {
+      let score = 0;
+      const answers = document.querySelectorAll('input[type="radio"]:checked');
+      answers.forEach(answer => {
+        if (answer.value === 'correct') score++;
+      });
+
+      let message = '';
+      if (score === questions.length) {
+        message = `💖 Ты знаешь меня идеально! ${score}/${questions.length}`;
+      } else if (score >= 8) {
+        message = `😊 Очень хорошо! ${score}/${questions.length}`;
+      } else {
+        message = `😅 Надо бы узнать меня получше! ${score}/${questions.length}`;
+      }
+
+      document.getElementById('quizForm').style.display = 'none';
+      document.getElementById('result').innerHTML = message + '<br><button onclick="location.reload()">Попробовать ещё раз</button>';
+    }
+  </script>
+</body>
+</html>
